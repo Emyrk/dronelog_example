@@ -5,6 +5,7 @@ from factom import Factomd, FactomWalletd
 import pdb
 import random
 from utils import hex
+import sys
 
 # Grabbed from python factomd lib
 def new_entry(walletd, factomd, chain_id, ext_ids, content, ec_address=None):
@@ -58,8 +59,11 @@ def convertFields(fields, the_dict):
 				the_dict[key] = fields[key][1](the_dict[key])
 
 
+if len(sys.argv) < 2:
+	print("./factomize LOGFILE")
+	sys.exit()
 
-csvfile = open('log.csv', 'r')
+csvfile = open(sys.argv[1], 'r')
 
 currentBin = []
 dataBins = []

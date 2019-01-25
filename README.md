@@ -1,7 +1,8 @@
 # Drone Logs to factom blockchain
 
 ```
-./factomize will push log.csv to the blockchain
+# Will push log csv to the blockchain
+./factomize LOGFILE
 
 ```
 
